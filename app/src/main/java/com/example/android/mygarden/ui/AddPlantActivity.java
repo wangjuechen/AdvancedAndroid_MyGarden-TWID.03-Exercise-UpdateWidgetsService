@@ -68,7 +68,7 @@ public class AddPlantActivity extends AppCompatActivity {
         // Close this activity
         finish();
 
-        PlantWateringService.startActionWaterPlants(this);
+        PlantWateringService.startActionUpdatePlantWidget(this);
     }
 
     public void onBackButtonClick(View view) {

@@ -62,6 +62,12 @@ public class PlantWateringService extends IntentService {
         context.startService(intent);
     }
 
+    public static void startActionUpdatePlantWidget(Context context) {
+        Intent intent = new Intent(context, PlantWateringService.class);
+        intent.setAction(ACTION_UPDATE_PLANT_WIDGETS);
+        context.startService(intent);
+    }
+
     /**
      * @param intent
      */
@@ -100,7 +106,7 @@ public class PlantWateringService extends IntentService {
      */
     private void handleActionUpdatePlantWidgets() {
         Uri PLANTS_URI = BASE_CONTENT_URI.buildUpon().appendPath(PATH_PLANTS).build();
-        
+
         Cursor cursor = getContentResolver().query(
                 PLANTS_URI,
                 null,
